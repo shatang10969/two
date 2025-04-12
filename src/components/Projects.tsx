@@ -193,11 +193,14 @@ const Projects = () => {
               >
                 {isClient ? (
                   <>
-                    {/* 移动端默认显示封面图 */}
-                    {isMobile && expandedVideo !== project.bvid && (
+                    {/* 只在非移动端显示封面图 */}
+                    {!isMobile && hoveredVideo !== project.bvid && (
                       <div 
                         className="relative w-full h-full cursor-pointer"
-                        onClick={() => handleExpand(project.bvid)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleFullscreen(project.bvid);
+                        }}
                       >
                         <img
                           src={getImagePath(project.cover)}
