@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
+import { getImagePath } from '@/utils/imagePath';
 
 const projects = [
   // 活动宣传
@@ -268,7 +269,7 @@ const Projects = () => {
                     }}
                   >
                     <img
-                      src={project.cover}
+                      src={getImagePath(project.cover)}
                       alt={project.title}
                       className="w-full h-full object-cover"
                       onError={(e) => {

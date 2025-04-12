@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { getImagePath } from '@/utils/imagePath';
 
 const accounts = [
   {
@@ -80,21 +81,17 @@ const Accounts = () => {
                 <div className="flex flex-col items-center">
                   <div className="flex items-center gap-1 mb-0.5">
                     {account.platform === 'douyin' && (
-                      <Image
-                        src="/douyin-icon.png"
-                        alt="抖音"
-                        width={12}
-                        height={12}
-                        className="w-3 h-3 md:w-3.5 md:h-3.5"
+                      <img 
+                        src={getImagePath("douyin-icon.png")} 
+                        alt="抖音图标" 
+                        className="w-6 h-6"
                       />
                     )}
                     {account.platform === 'xiaohongshu' && (
-                      <Image
-                        src="/xiaohongshu-icon.png"
-                        alt="小红书"
-                        width={12}
-                        height={12}
-                        className="w-3 h-3 md:w-3.5 md:h-3.5"
+                      <img 
+                        src={getImagePath("xiaohongshu-icon.png")} 
+                        alt="小红书图标" 
+                        className="w-6 h-6"
                       />
                     )}
                     <h3 className="font-medium text-[10px] md:text-sm text-center group-hover:text-purple-600 transition-colors">

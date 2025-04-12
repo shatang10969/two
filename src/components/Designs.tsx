@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
+import { getImagePath } from '@/utils/imagePath';
 
 const Designs = () => {
   const [selectedDesign, setSelectedDesign] = useState<number | null>(null);
@@ -61,9 +62,9 @@ const Designs = () => {
                     onClick={() => setSelectedDesign(index)}
                   >
                     <img
-                      src={design.cover}
+                      src={getImagePath(design.cover)}
                       alt={design.title}
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </div>
