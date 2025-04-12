@@ -31,4 +31,49 @@ body {
     padding-top: 2rem;
     padding-bottom: 5rem; /* 为底部导航栏留出空间 */
   }
+
+  .rotate-90 {
+    transform: rotate(90deg);
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* 优化视频容器的渲染性能 */
+  .video-container {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* 优化图片加载 */
+  img {
+    content-visibility: auto;
+  }
+}
+
+/* 优化动画性能 */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-\[ping_3s_ease-in-out_infinite\] {
+  animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-\[pulse_3s_ease-in-out_infinite\] {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

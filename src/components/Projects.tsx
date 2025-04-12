@@ -66,10 +66,20 @@ const Projects = () => {
 
   useEffect(() => {
     if (isClient && isMobile) {
-      const script = document.createElement('script');
-      script.src = 'https://player.bilibili.com/player.html';
-      script.async = true;
-      document.body.appendChild(script);
+      // 只在需要时加载播放器脚本
+      const loadPlayerScript = () => {
+        if (!document.querySelector('script[src="https://player.bilibili.com/player.html"]')) {
+          const script = document.createElement('script');
+          script.src = 'https://player.bilibili.com/player.html';
+          script.async = true;
+          document.body.appendChild(script);
+        }
+      };
+
+      // 只在视频展开时加载播放器
+      if (expandedVideo) {
+        loadPlayerScript();
+      }
 
       const handleFullscreenChange = () => {
         setIsFullscreen(!!document.fullscreenElement);
@@ -78,11 +88,10 @@ const Projects = () => {
       document.addEventListener('fullscreenchange', handleFullscreenChange);
       
       return () => {
-        document.body.removeChild(script);
         document.removeEventListener('fullscreenchange', handleFullscreenChange);
       };
     }
-  }, [isClient, isMobile]);
+  }, [isClient, isMobile, expandedVideo]);
 
   const handleFullscreen = (bvid: string) => {
     const container = containerRefs.current[bvid];
@@ -129,34 +138,12 @@ const Projects = () => {
       setExpandedVideo(bvid);
       const container = containerRefs.current[bvid];
       if (container) {
-        container.style.position = 'fixed';
-        container.style.top = '0';
-        container.style.left = '0';
-        container.style.width = '100%';
-        container.style.height = '100%';
-        container.style.zIndex = '50';
-        container.style.transform = isLandscape ? 'rotate(90deg)' : 'none';
-        container.style.transformOrigin = 'center center';
-        document.body.style.overflow = 'hidden';
-
-        // 获取视频尺寸并自动判断是否需要横屏
-        const iframe = iframeRefs.current[bvid];
-        if (iframe) {
-          const video = iframe.contentWindow?.document.querySelector('video');
-          if (video) {
-            const { videoWidth, videoHeight } = video;
-            setVideoDimensions(prev => ({
-              ...prev,
-              [bvid]: { width: videoWidth, height: videoHeight }
-            }));
-            
-            // 如果视频是横屏比例（宽高比大于1），自动切换到横屏模式
-            if (videoWidth > videoHeight) {
-              setIsLandscape(true);
-              container.style.transform = 'rotate(90deg)';
-            }
-          }
+        // 使用 CSS transform 代替直接修改样式
+        container.classList.add('fixed', 'inset-0', 'z-50');
+        if (isLandscape) {
+          container.classList.add('rotate-90');
         }
+        document.body.classList.add('overflow-hidden');
       }
     }
   };
@@ -167,15 +154,8 @@ const Projects = () => {
       setIsLandscape(false);
       const container = containerRefs.current[bvid];
       if (container) {
-        container.style.position = '';
-        container.style.top = '';
-        container.style.left = '';
-        container.style.width = '';
-        container.style.height = '';
-        container.style.zIndex = '';
-        container.style.transform = '';
-        container.style.transformOrigin = '';
-        document.body.style.overflow = '';
+        container.classList.remove('fixed', 'inset-0', 'z-50', 'rotate-90');
+        document.body.classList.remove('overflow-hidden');
       }
     }
   };
@@ -211,63 +191,50 @@ const Projects = () => {
                   }
                 }}
               >
-                {isClient && (isMobile || hoveredVideo === project.bvid) ? (
-                  <div 
-                    className="relative w-full h-full"
-                    onDoubleClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleFullscreen(project.bvid);
-                    }}
-                  >
-                    <iframe
-                      src={`https://player.bilibili.com/player.html?bvid=${project.bvid}&page=1&high_quality=1&danmaku=0&autoplay=${!isMobile ? 1 : 0}&direction=0&showinfo=1&controls=1&disablekb=0&enable_ssl=1&playsinline=1`}
-                      className="w-full h-full"
-                      allow="autoplay; fullscreen"
-                      sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-                      ref={(el) => {
-                        if (el) {
-                          iframeRefs.current[project.bvid] = el;
-                        }
-                      }}
-                    />
-                    {expandedVideo === project.bvid && (
-                      <div className="absolute top-4 left-4 z-50 flex gap-2">
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            toggleLandscape(project.bvid);
+                {isClient ? (
+                  <>
+                    {/* 移动端默认显示封面图 */}
+                    {isMobile && expandedVideo !== project.bvid && (
+                      <div 
+                        className="relative w-full h-full cursor-pointer"
+                        onClick={() => handleExpand(project.bvid)}
+                      >
+                        <img
+                          src={getImagePath(project.cover)}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/images/thumbnails/default.jpg';
                           }}
-                          className="bg-white/80 text-gray-800 px-3 py-1 rounded-full text-sm"
-                        >
-                          {isLandscape ? '竖屏' : '横屏'}
-                        </button>
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            handleShrink(project.bvid);
-                          }}
-                          className="bg-white/80 text-gray-800 px-3 py-1 rounded-full text-sm"
-                        >
-                          缩小
-                        </button>
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center">
+                            <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     )}
-                  </div>
+                    
+                    {/* 只在需要时渲染播放器 */}
+                    {(isMobile && expandedVideo === project.bvid) || (!isMobile && hoveredVideo === project.bvid) ? (
+                      <iframe
+                        src={`https://player.bilibili.com/player.html?bvid=${project.bvid}&page=1&high_quality=1&danmaku=0&autoplay=1&direction=0&showinfo=1&controls=1&disablekb=0&enable_ssl=1&playsinline=1`}
+                        className="w-full h-full"
+                        allow="autoplay; fullscreen"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                        ref={(el) => {
+                          if (el) {
+                            iframeRefs.current[project.bvid] = el;
+                          }
+                        }}
+                      />
+                    ) : null}
+                  </>
                 ) : (
-                  <div 
-                    className="relative w-full h-full cursor-pointer"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (isMobile) {
-                        handleExpand(project.bvid);
-                      } else {
-                        handleFullscreen(project.bvid);
-                      }
-                    }}
-                  >
+                  <div className="relative w-full h-full">
                     <img
                       src={getImagePath(project.cover)}
                       alt={project.title}
@@ -277,13 +244,6 @@ const Projects = () => {
                         target.src = '/images/thumbnails/default.jpg';
                       }}
                     />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
                   </div>
                 )}
               </div>
