@@ -18,7 +18,7 @@ const projects = [
     title: "丰农故事",
     category: "activity",
     bvid: "BV18PdDYBEH1",
-    cover: "/images/thumbnails/BV18PdDYBEH1.jpg",
+    cover: "thumbnails/BV18PdDYBEH1.jpg",
     link: "#",
     description: "拍摄剪辑"
   },
@@ -27,7 +27,7 @@ const projects = [
     title: "天天学园艺",
     category: "feed",
     bvid: "BV14TdUYZEba",
-    cover: "/images/thumbnails/BV14TdUYZEba.jpg",
+    cover: "thumbnails/BV14TdUYZEba.jpg",
     link: "#",
     description: "农业教育 拍摄剪辑"
   },

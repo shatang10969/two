@@ -7,23 +7,23 @@ import { getImagePath } from '@/utils/imagePath';
 const designs = [
   {
     title: "2023个人作品集设计",
-    description: "采用黑白极简风格的作品集设计，以网格和几何图形为基础，展现信息流设计、社交行业、电商行业等多个领域的设计作品。设计风格简约现代，突出作品分类展示。",
-    cover: "/portfolio-cover.png",
-    images: ["/design3.png"],
+    description: "作品集设计",
+    cover: "portfolio-cover.png",
+    images: ["portfolio-1.png", "portfolio-2.png", "portfolio-3.png", "portfolio-4.png"],
     link: "#"
   },
   {
     title: "2020游戏直播设计合集",
-    description: "包含Banner设计、Logo设计和品牌视觉包装，涵盖了和平精英、虎牙直播等游戏直播内容。设计风格突出电竞元素，采用动感的构图和鲜明的色彩对比。",
-    cover: "/game-cover.png",
-    images: ["/design2.jpeg"],
+    description: "游戏直播设计",
+    cover: "game-cover.png",
+    images: ["game-1.png", "game-2.png", "game-3.png", "game-4.png"],
     link: "#"
   },
   {
     title: "Octanion Wallte APP UI设计",
-    description: "一款数字货币钱包APP的UI设计，采用蓝色渐变为主色调，简洁的LOGO设计突出品牌识别度。包含完整的用户界面流程、功能模块设计和视觉风格定义。",
-    cover: "/wallet-cover.jpg",
-    images: ["/design1.jpg"],
+    description: "APP UI设计",
+    cover: "wallet-cover.jpg",
+    images: ["wallet-1.jpg", "wallet-2.jpg", "wallet-3.jpg", "wallet-4.jpg"],
     link: "#"
   }
 ];
