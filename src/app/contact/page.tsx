@@ -3,6 +3,7 @@
 import Footer from '../../components/Footer';
 import Image from 'next/image';
 import { useState } from 'react';
+import { getImagePath } from '@/utils/imagePath';
 
 export default function ContactPage() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -45,11 +46,10 @@ export default function ContactPage() {
                 <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                   <div className="flex flex-row md:flex-col gap-4 md:gap-6 items-center">
                     <div className="relative w-24 h-24 md:w-60 md:h-60">
-                      <Image 
-                        src="/contact-avatar.png" 
-                        alt="唐俊深" 
-                        fill
-                        className="object-cover"
+                      <img 
+                        src={getImagePath("contact-avatar.png")} 
+                        alt="联系头像" 
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     

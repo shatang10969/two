@@ -3,6 +3,7 @@
 import Footer from '../../components/Footer';
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { getImagePath } from '@/utils/imagePath';
 
 const categories = [
   { id: 'all', name: '全部视频' },
@@ -391,7 +392,7 @@ export default function ProjectsPage() {
                           }}
                         >
                           <img
-                            src={project.cover}
+                            src={getImagePath(project.cover)}
                             alt={project.title}
                             className="w-full h-full object-cover"
                             onError={(e) => {
@@ -423,7 +424,7 @@ export default function ProjectsPage() {
                   ) : (
                     <div className="relative w-full h-full">
                       <img
-                        src={project.cover}
+                        src={getImagePath(project.cover)}
                         alt={project.title}
                         className="w-full h-full object-cover"
                         onError={(e) => {

@@ -2,6 +2,7 @@
 
 import Footer from '../../components/Footer';
 import { useState, useRef, useEffect } from 'react';
+import { getImagePath } from '@/utils/imagePath';
 
 const designs = [
   {
@@ -69,9 +70,9 @@ export default function DesignsPage() {
                           onClick={() => setSelectedDesign(index)}
                         >
                           <img
-                            src={design.cover}
+                            src={getImagePath(design.cover)}
                             alt={design.title}
-                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-cover"
                           />
                         </div>
                       </div>

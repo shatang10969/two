@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getImagePath } from '@/utils/imagePath';
 
 const Skills = () => {
   const skills = [
@@ -60,7 +61,11 @@ const Skills = () => {
             <div key={index} className="bg-purple-50 p-4 rounded-xl hover:bg-purple-100 transition-colors">
               <div className="flex items-center gap-4">
                 <div className="flex-shrink-0 flex items-center justify-center pl-4">
-                  {skill.icon}
+                  <img 
+                    src={getImagePath(skill.icon)} 
+                    alt={skill.title} 
+                    className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1 md:text-lg text-base">{skill.title}</h3>
