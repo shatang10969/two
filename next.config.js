@@ -10,7 +10,7 @@ const nextConfig = {
     ],
     unoptimized: true
   },
-  basePath: '/TT10969',
+  basePath: process.env.NODE_ENV === 'production' ? '/TT10969' : '',
   trailingSlash: true,
 }
 
