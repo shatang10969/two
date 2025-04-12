@@ -405,9 +405,11 @@ export default function ProjectsPage() {
                           </div>
                         </div>
                       )}
+                      
+                      {/* 移动端直接显示播放器，非移动端在hover时显示 */}
                       {(isMobile || (!isMobile && hoveredVideo === project.bvid)) ? (
                         <iframe
-                          src={`https://player.bilibili.com/player.html?bvid=${project.bvid}&page=1&high_quality=1&danmaku=0&autoplay=${isMobile ? 0 : 1}`}
+                          src={`https://player.bilibili.com/player.html?bvid=${project.bvid}&page=1&high_quality=1&danmaku=0&autoplay=${isMobile ? 0 : 1}&direction=0&showinfo=1&controls=1&disablekb=0&enable_ssl=1&playsinline=1`}
                           className="w-full h-full"
                           allow="autoplay; fullscreen"
                           sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
