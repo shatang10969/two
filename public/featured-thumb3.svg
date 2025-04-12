@@ -1,0 +1,20 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="300" height="300" fill="#ECFDF5"/>
+  
+  <!-- 设计元素 -->
+  <rect x="50" y="80" width="200" height="140" rx="12" fill="#059669" opacity="0.8"/>
+  <rect x="80" y="120" width="140" height="20" rx="4" fill="white" opacity="0.9"/>
+  <rect x="80" y="150" width="100" height="10" rx="2" fill="white" opacity="0.7"/>
+  <rect x="80" y="170" width="70" height="10" rx="2" fill="white" opacity="0.7"/>
+  
+  <!-- 装饰图形 -->
+  <circle cx="70" cy="230" r="25" fill="#059669" opacity="0.3"/>
+  <circle cx="120" cy="230" r="25" fill="#059669" opacity="0.5"/>
+  <circle cx="170" cy="230" r="25" fill="#059669" opacity="0.7"/>
+  <circle cx="220" cy="230" r="25" fill="#059669" opacity="0.9"/>
+  
+  <!-- 右上角装饰 -->
+  <circle cx="230" cy="60" r="15" fill="#059669" opacity="0.6"/>
+  <circle cx="260" cy="60" r="10" fill="#059669" opacity="0.4"/>
+</svg>

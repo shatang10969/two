@@ -1,0 +1,46 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  
+  <!-- 电商网站界面模拟 -->
+  <rect x="100" y="50" width="600" height="500" rx="8" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+  
+  <!-- 顶部导航栏 -->
+  <rect x="100" y="50" width="600" height="60" rx="8" fill="#4F46E5"/>
+  <circle cx="140" cy="80" r="15" fill="white"/>
+  <rect x="170" y="70" width="80" height="20" rx="4" fill="white" opacity="0.8"/>
+  <rect x="270" y="70" width="80" height="20" rx="4" fill="white" opacity="0.6"/>
+  <rect x="370" y="70" width="80" height="20" rx="4" fill="white" opacity="0.6"/>
+  <rect x="550" y="70" width="120" height="20" rx="10" fill="white" opacity="0.8"/>
+  
+  <!-- 主要内容区 -->
+  <rect x="130" y="140" width="300" height="350" rx="8" fill="#F9FAFB"/>
+  
+  <!-- 产品图片 -->
+  <rect x="150" y="160" width="260" height="200" rx="4" fill="#D1D5DB"/>
+  <circle cx="280" cy="260" r="40" fill="#9CA3AF"/>
+  <path d="M260 260L300 260M280 240L280 280" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- 产品信息 -->
+  <rect x="150" y="380" width="180" height="24" rx="4" fill="#374151"/>
+  <rect x="150" y="420" width="120" height="20" rx="4" fill="#4F46E5"/>
+  <rect x="150" y="460" width="260" height="10" rx="2" fill="#9CA3AF"/>
+  <rect x="150" y="480" width="220" height="10" rx="2" fill="#9CA3AF"/>
+  
+  <!-- 侧边栏 -->
+  <rect x="460" y="140" width="210" height="350" rx="8" fill="#F9FAFB"/>
+  <rect x="480" y="160" width="170" height="24" rx="4" fill="#374151"/>
+  
+  <!-- 相关产品 -->
+  <rect x="480" y="200" width="70" height="70" rx="4" fill="#D1D5DB"/>
+  <rect x="565" y="200" width="70" height="70" rx="4" fill="#D1D5DB"/>
+  <rect x="480" y="285" width="70" height="70" rx="4" fill="#D1D5DB"/>
+  <rect x="565" y="285" width="70" height="70" rx="4" fill="#D1D5DB"/>
+  
+  <!-- 按钮 -->
+  <rect x="480" y="380" width="170" height="40" rx="20" fill="#4F46E5"/>
+  <rect x="520" y="390" width="90" height="20" rx="4" fill="white" opacity="0.8"/>
+  
+  <!-- Trendify E-commerce 文字 -->
+  <text x="400" y="570" font-family="Arial" font-size="24" font-weight="bold" fill="#111827" text-anchor="middle">Trendify E-commerce</text>
+</svg>
