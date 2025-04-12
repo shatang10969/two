@@ -295,8 +295,8 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <main className="max-w-4xl mx-auto">
-        <section className="py-8 md:py-16 px-4 md:px-8">
+      <main className="max-w-4xl mx-auto px-4 md:px-8">
+        <section className="py-8 md:py-16">
           <h1 className="text-3xl font-bold mb-2">视频作品</h1>
           <p className="text-gray-600 mb-8">探索我的视频作品集，展示最近的视频创作。</p>
 
