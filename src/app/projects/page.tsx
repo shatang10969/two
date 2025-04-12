@@ -202,6 +202,17 @@ export default function ProjectsPage() {
     }
   }, [isClient, isMobile]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const handleFullscreen = (bvid: string) => {
     const container = containerRefs.current[bvid];
     if (container) {
@@ -211,12 +222,12 @@ export default function ProjectsPage() {
       } else {
         if (container.requestFullscreen) {
           container.requestFullscreen();
-        } else if ((container as any).webkitRequestFullscreen) {
-          (container as any).webkitRequestFullscreen();
-        } else if ((container as any).mozRequestFullScreen) {
-          (container as any).mozRequestFullScreen();
-        } else if ((container as any).msRequestFullscreen) {
-            (container as any).msRequestFullscreen();
+        } else if ((container as unknown as { webkitRequestFullscreen: () => Promise<void> }).webkitRequestFullscreen) {
+          (container as unknown as { webkitRequestFullscreen: () => Promise<void> }).webkitRequestFullscreen();
+        } else if ((container as unknown as { mozRequestFullScreen: () => Promise<void> }).mozRequestFullScreen) {
+          (container as unknown as { mozRequestFullScreen: () => Promise<void> }).mozRequestFullScreen();
+        } else if ((container as unknown as { msRequestFullscreen: () => Promise<void> }).msRequestFullscreen) {
+          (container as unknown as { msRequestFullscreen: () => Promise<void> }).msRequestFullscreen();
         }
         setIsFullscreen(true);
       }
@@ -302,21 +313,8 @@ export default function ProjectsPage() {
                   <div
                     key={index}
                     className="group block overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-                    onMouseEnter={() => {
-                      setHoveredVideo(project.bvid);
-                    }}
-                    onMouseLeave={() => {
-                      setHoveredVideo(null);
-                      setPlayingVideos(prev => {
-                        const newSet = new Set(prev);
-                        newSet.delete(project.bvid);
-                        return newSet;
-                      });
-                    }}
-                    onClick={() => {
-                      setHoveredVideo(project.bvid);
-                      setPlayingVideos(prev => new Set([...prev, project.bvid]));
-                    }}
+                    onMouseEnter={() => !isMobile && setHoveredVideo(project.bvid)}
+                    onMouseLeave={() => !isMobile && setHoveredVideo(null)}
                   >
                     <div 
                       className="aspect-video relative bg-gray-100"
@@ -326,9 +324,9 @@ export default function ProjectsPage() {
                         }
                       }}
                     >
-                      {isClient && (
+                      {isClient && (isMobile || hoveredVideo === project.bvid) ? (
                         <iframe
-                          src={`https://player.bilibili.com/player.html?bvid=${project.bvid}&page=1&high_quality=1&danmaku=0&autoplay=0&direction=0&showinfo=1&controls=1&disablekb=0&enable_ssl=1&playsinline=1`}
+                          src={`https://player.bilibili.com/player.html?bvid=${project.bvid}&page=1&high_quality=1&danmaku=0&autoplay=${!isMobile ? 1 : 0}&direction=0&showinfo=1&controls=1&disablekb=0&enable_ssl=1&playsinline=1`}
                           className="w-full h-full"
                           allow="autoplay; fullscreen"
                           sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
@@ -338,6 +336,25 @@ export default function ProjectsPage() {
                             }
                           }}
                         />
+                      ) : (
+                        <div className="relative w-full h-full">
+                          <img
+                            src={project.cover}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = '/images/thumbnails/default.jpg';
+                            }}
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center">
+                              <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
                       )}
                     </div>
                     <div className="p-4">

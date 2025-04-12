@@ -2,10 +2,26 @@
 
 import Footer from '../../components/Footer';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ContactPage() {
   const [copied, setCopied] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
 
   const copyToClipboard = (text: string, type: string) => {
     // 创建临时输入框
