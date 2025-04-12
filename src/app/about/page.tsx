@@ -40,7 +40,7 @@ export default function AboutPage() {
     {
       company: '深圳市丰农控股(集团)有限公司',
       position: '农业教育｜短视频运营·编导',
-      period: '2023.03-至今',
+      period: '2023.3-2025.3',
       jobDescription: [
         '负责巨量、小红书、百度等平台信息流广告视频，脚本策划、剪辑、拍摄及图片设计',
         '负责公司线下游学及农业教学课程视频拍摄与剪辑',
