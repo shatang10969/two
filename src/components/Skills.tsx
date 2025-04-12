@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getImagePath } from '@/utils/imagePath';
 
 const Skills = () => {
   const skills = [
@@ -75,7 +76,7 @@ const Skills = () => {
             {softwareSkills.map((software, index) => (
               <div key={index} className="aspect-square rounded-xl overflow-hidden bg-purple-50 shadow-sm hover:shadow-md transition-shadow p-3">
                 <Image
-                  src={software.logo}
+                  src={getImagePath(software.logo)}
                   alt={software.name}
                   width={60}
                   height={60}
