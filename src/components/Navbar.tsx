@@ -10,6 +10,7 @@ import {
   Palette, 
   Mail,
 } from 'lucide-react'
+import { getImagePath } from '@/utils/imagePath';
 
 const navItems = [
   { name: '首页', href: '/', icon: Home },
@@ -30,7 +31,7 @@ const Navbar = () => {
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-purple-500 animate-pulse opacity-20"></div>
             <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-200 shadow-md relative z-10">
-              <Image src="/avatar.jpg" alt="头像" width={96} height={96} />
+              <Image src={getImagePath("/avatar.jpg")} alt="头像" width={96} height={96} />
             </div>
           </div>
           <div className="text-center">
@@ -83,7 +84,7 @@ const Navbar = () => {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-purple-500 animate-pulse opacity-20"></div>
               <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-200 shadow-sm relative z-10">
-                <Image src="/avatar.jpg" alt="头像" width={48} height={48} />
+                <Image src={getImagePath("/avatar.jpg")} alt="头像" width={48} height={48} />
               </div>
             </div>
             <div className="flex items-center gap-1.5">

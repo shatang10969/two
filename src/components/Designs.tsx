@@ -57,14 +57,13 @@ const Designs = () => {
               <div className="flex flex-col md:flex-row">
                 <div className="w-full md:w-3/5">
                   <div 
-                    className="relative w-full h-48 md:h-64 rounded-lg overflow-hidden"
+                    className="relative aspect-video cursor-pointer"
                     onClick={() => setSelectedDesign(index)}
                   >
-                    <Image
+                    <img
                       src={design.cover}
                       alt={design.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </div>

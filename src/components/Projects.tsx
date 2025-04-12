@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 
 const projects = [
   // 活动宣传
@@ -204,19 +203,13 @@ const Projects = () => {
               onMouseLeave={() => !isMobile && setHoveredVideo(null)}
             >
               <div 
-                className={`relative w-full h-48 md:h-64 rounded-lg overflow-hidden ${expandedVideo === project.bvid ? 'fixed inset-0 z-50' : ''}`}
+                className={`aspect-video relative bg-gray-100 ${expandedVideo === project.bvid ? 'fixed inset-0 z-50' : ''}`}
                 ref={(el) => {
                   if (el) {
                     containerRefs.current[project.bvid] = el;
                   }
                 }}
               >
-                <Image
-                  src={project.cover}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
                 {isClient && (isMobile || hoveredVideo === project.bvid) ? (
                   <div 
                     className="relative w-full h-full"
@@ -274,6 +267,15 @@ const Projects = () => {
                       }
                     }}
                   >
+                    <img
+                      src={project.cover}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = '/images/thumbnails/default.jpg';
+                      }}
+                    />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
                       <div className="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center">
                         <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">

@@ -8,8 +8,7 @@ const nextConfig = {
         hostname: '**',
       },
     ],
-    unoptimized: true,
-    domains: ['localhost'],
+    unoptimized: true
   },
   basePath: process.env.NODE_ENV === 'production' ? '/TT10969' : '',
   trailingSlash: true,
@@ -20,6 +19,13 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|svg)$/i,
+      type: 'asset/resource',
+    });
+    return config;
   },
 }
 
