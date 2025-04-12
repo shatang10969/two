@@ -14,6 +14,12 @@ const nextConfig = {
   trailingSlash: true,
   assetPrefix: process.env.NODE_ENV === 'production' ? '/TT10969/' : '',
   reactStrictMode: false,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig 

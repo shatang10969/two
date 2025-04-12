@@ -2,12 +2,19 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next'
 
 type Props = {
   params: {
     slug: string;
   };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return {
+    title: `设计作品 - ${params.slug}`,
+  }
+}
 
 export default function DesignDetailPage({ params }: Props) {
   // 模拟从数据库获取设计作品详情
