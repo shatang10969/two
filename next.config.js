@@ -11,6 +11,7 @@ const nextConfig = {
     unoptimized: true
   },
   basePath: '/TT10969',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
