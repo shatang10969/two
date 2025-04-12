@@ -32,12 +32,15 @@ jobs:
           enablement: true
         
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm cache clean --force
+          npm install --legacy-peer-deps
         
       - name: Build
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /TT10969
+          NODE_ENV: production
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

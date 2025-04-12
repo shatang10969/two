@@ -334,8 +334,8 @@ export default function ProjectsPage() {
                 </div>
               </div>
             )}
-          </div>
-
+                  </div>
+                  
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             {filteredProjects.map((project, index) => (
               <div
@@ -504,12 +504,12 @@ export default function ProjectsPage() {
                       </span>
                     ))}
                   </div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-        <Footer />
+              ))}
+            </div>
+          </section>
+          <Footer />
       </main>
     </div>
   );

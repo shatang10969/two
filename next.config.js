@@ -12,6 +12,8 @@ const nextConfig = {
   },
   basePath: process.env.NODE_ENV === 'production' ? '/TT10969' : '',
   trailingSlash: true,
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/TT10969/' : '',
+  reactStrictMode: false,
 }
 
 module.exports = nextConfig 
