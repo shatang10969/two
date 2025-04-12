@@ -2,13 +2,13 @@
 const nextConfig = {
   output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**',
       },
     ],
-    unoptimized: true
   },
   basePath: process.env.NODE_ENV === 'production' ? '/TT10969' : '',
   trailingSlash: true,
