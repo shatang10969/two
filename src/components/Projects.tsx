@@ -10,7 +10,7 @@ const projects = [
     title: "丰农故事",
     category: "activity",
     bvid: "BV18PdDYBEH1",
-    cover: "/images/thumbnails/BV18PdDYBEH1.jpg",
+    cover: "images/thumbnails/BV18PdDYBEH1.jpg",
     link: "#",
     description: "拍摄剪辑"
   },
@@ -19,7 +19,7 @@ const projects = [
     title: "FB双光警戒摄像机",
     category: "feed",
     bvid: "BV1CidSYoEk3",
-    cover: "/images/thumbnails/BV1CidSYoEk3.jpg",
+    cover: "images/thumbnails/BV1CidSYoEk3.jpg",
     link: "#",
     description: "电子产品 纯剪辑"
   },
@@ -28,7 +28,7 @@ const projects = [
     title: "游戏特效混剪",
     category: "feed",
     bvid: "BV1acdDY6Eev",
-    cover: "/images/thumbnails/BV1acdDY6Eev.jpg",
+    cover: "images/thumbnails/BV1acdDY6Eev.jpg",
     link: "#",
     description: "游戏宣发 纯剪辑"
   },
@@ -37,7 +37,7 @@ const projects = [
     title: "亿图脑图",
     category: "software",
     bvid: "BV1SKdDYTEWg",
-    cover: "/images/thumbnails/BV1SKdDYTEWg.jpg",
+    cover: "images/thumbnails/BV1SKdDYTEWg.jpg",
     link: "#",
     description: "纯剪辑"
   }
