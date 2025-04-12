@@ -10,9 +10,9 @@ const nextConfig = {
       },
     ],
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/TT10969' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/one-' : '',
   trailingSlash: true,
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/TT10969/' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/one-/' : '',
   reactStrictMode: false,
   typescript: {
     ignoreBuildErrors: true,
