@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 // ... existing imports ...
 <Image
   src={project.cover}
