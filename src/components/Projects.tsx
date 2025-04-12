@@ -331,6 +331,15 @@ const Projects = () => {
             </div>
           ))}
         </div>
+        
+        <div className="mt-8 text-center">
+          <Link 
+            href="/projects" 
+            className="inline-block border border-gray-300 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+          >
+            查看所有视频作品
+          </Link>
+        </div>
       </div>
     </section>
   );
