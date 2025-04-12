@@ -82,14 +82,14 @@ const Accounts = () => {
                   <div className="flex items-center gap-1 mb-0.5">
                     {account.platform === 'douyin' && (
                       <img 
-                        src={getImagePath("douyin-icon.png")} 
+                        src={getImagePath("/images/douyin-icon.png")} 
                         alt="抖音图标" 
                         className="w-6 h-6"
                       />
                     )}
                     {account.platform === 'xiaohongshu' && (
                       <img 
-                        src={getImagePath("xiaohongshu-icon.png")} 
+                        src={getImagePath("/images/xiaohongshu-icon.png")} 
                         alt="小红书图标" 
                         className="w-6 h-6"
                       />

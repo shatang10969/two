@@ -31,7 +31,11 @@ const Navbar = () => {
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-purple-500 animate-pulse opacity-20"></div>
             <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-200 shadow-md relative z-10">
-              <img src={getImagePath("avatar.jpg")} alt="头像" className="w-full h-full object-cover" />
+              <img 
+                src={getImagePath("/images/avatar.jpg")} 
+                alt="头像" 
+                className="w-full h-full object-cover" 
+              />
             </div>
           </div>
           <div className="text-center">
@@ -84,7 +88,11 @@ const Navbar = () => {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-purple-500 animate-pulse opacity-20"></div>
               <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-200 shadow-sm relative z-10">
-                <img src={getImagePath("avatar.jpg")} alt="头像" className="w-full h-full object-cover" />
+                <img 
+                  src={getImagePath("/images/avatar.jpg")} 
+                  alt="头像" 
+                  className="w-full h-full object-cover" 
+                />
               </div>
             </div>
             <div className="flex items-center gap-1.5">

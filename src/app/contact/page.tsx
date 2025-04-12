@@ -47,7 +47,7 @@ export default function ContactPage() {
                   <div className="flex flex-row md:flex-col gap-4 md:gap-6 items-center">
                     <div className="relative w-24 h-24 md:w-60 md:h-60">
                       <img 
-                        src={getImagePath("contact-avatar.png")} 
+                        src={getImagePath("/images/contact-avatar.png")} 
                         alt="联系头像" 
                         className="w-full h-full object-cover"
                       />
