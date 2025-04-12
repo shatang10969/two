@@ -384,11 +384,7 @@ export default function ProjectsPage() {
                           className="relative w-full h-full cursor-pointer"
                           onClick={(e) => {
                             e.stopPropagation();
-                            if (isMobile) {
-                              handleExpand(project.bvid);
-                            } else {
-                              handleFullscreen(project.bvid);
-                            }
+                            handleFullscreen(project.bvid);
                           }}
                         >
                           <img
@@ -409,17 +405,19 @@ export default function ProjectsPage() {
                           </div>
                         </div>
                       )}
-                      <iframe
-                        src={`https://player.bilibili.com/player.html?bvid=${project.bvid}&page=1&high_quality=1&danmaku=0&autoplay=${(isMobile && expandedVideo === project.bvid) || (!isMobile && hoveredVideo === project.bvid) ? 1 : 0}&direction=0&showinfo=1&controls=1&disablekb=0&enable_ssl=1&playsinline=1`}
-                        className={`w-full h-full ${!isMobile && hoveredVideo !== project.bvid ? 'hidden' : ''}`}
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-                        ref={(el) => {
-                          if (el) {
-                            iframeRefs.current[project.bvid] = el;
-                          }
-                        }}
-                      />
+                      {(isMobile || (!isMobile && hoveredVideo === project.bvid)) ? (
+                        <iframe
+                          src={`https://player.bilibili.com/player.html?bvid=${project.bvid}&page=1&high_quality=1&danmaku=0&autoplay=${isMobile ? 0 : 1}&direction=0&showinfo=1&controls=1&disablekb=0&enable_ssl=1&playsinline=1`}
+                          className="w-full h-full"
+                          allow="autoplay; fullscreen"
+                          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                          ref={(el) => {
+                            if (el) {
+                              iframeRefs.current[project.bvid] = el;
+                            }
+                          }}
+                        />
+                      ) : null}
                     </>
                   ) : (
                     <div className="relative w-full h-full">
