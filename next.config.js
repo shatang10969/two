@@ -8,7 +8,8 @@ const nextConfig = {
         hostname: '**',
       },
     ],
-    unoptimized: true
+    unoptimized: true,
+    domains: ['localhost'],
   },
   basePath: process.env.NODE_ENV === 'production' ? '/TT10969' : '',
   trailingSlash: true,
