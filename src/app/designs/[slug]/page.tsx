@@ -10,6 +10,14 @@ type Props = {
   };
 };
 
+export function generateStaticParams() {
+  return [
+    { slug: 'design1' },
+    { slug: 'design2' },
+    { slug: 'design3' },
+  ]
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `设计作品 - ${params.slug}`,
