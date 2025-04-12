@@ -40,13 +40,15 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /two
           NODE_ENV: production
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+
+      - name: Create CNAME file
+        run: echo "www.tudou10969.me" > ./out/CNAME
 
   deploy:
     environment:
