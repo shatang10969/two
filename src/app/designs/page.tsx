@@ -7,24 +7,24 @@ import { getImagePath } from '@/utils/imagePath';
 const designs = [
   {
     title: "2023个人作品集设计",
-    description: "作品集设计",
     cover: "portfolio-cover.png",
-    images: ["portfolio-1.png", "portfolio-2.png", "portfolio-3.png", "portfolio-4.png"],
-    link: "#"
+    link: "#",
+    description: "UI设计",
+    images: ["design3.png"]
   },
   {
     title: "2020游戏直播设计合集",
-    description: "游戏直播设计",
     cover: "game-cover.png",
-    images: ["game-1.png", "game-2.png", "game-3.png", "game-4.png"],
-    link: "#"
+    link: "#",
+    description: "UI设计",
+    images: ["design2.jpeg"]
   },
   {
     title: "Octanion Wallte APP UI设计",
-    description: "APP UI设计",
     cover: "wallet-cover.jpg",
-    images: ["wallet-1.jpg", "wallet-2.jpg", "wallet-3.jpg", "wallet-4.jpg"],
-    link: "#"
+    link: "#",
+    description: "UI设计",
+    images: ["design1.jpg"]
   }
 ];
 

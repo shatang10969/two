@@ -18,7 +18,7 @@ const projects = [
     title: "丰农故事",
     category: "activity",
     bvid: "BV18PdDYBEH1",
-    cover: "thumbnails/BV18PdDYBEH1.jpg",
+    cover: "images/thumbnails/BV18PdDYBEH1.jpg",
     link: "#",
     description: "拍摄剪辑"
   },
@@ -27,7 +27,7 @@ const projects = [
     title: "天天学园艺",
     category: "feed",
     bvid: "BV14TdUYZEba",
-    cover: "thumbnails/BV14TdUYZEba.jpg",
+    cover: "images/thumbnails/BV14TdUYZEba.jpg",
     link: "#",
     description: "农业教育 拍摄剪辑"
   },
@@ -36,7 +36,7 @@ const projects = [
     title: "亿图脑图",
     category: "software",
     bvid: "BV1SKdDYTEWg",
-    cover: "/images/thumbnails/BV1SKdDYTEWg.jpg",
+    cover: "images/thumbnails/BV1SKdDYTEWg.jpg",
     link: "#",
     description: "纯剪辑"
   },
@@ -45,7 +45,7 @@ const projects = [
     title: "天天学农",
     category: "feed",
     bvid: "BV14TdUYZEbJ",
-    cover: "/images/thumbnails/BV14TdUYZEbJ.jpg",
+    cover: "images/thumbnails/BV14TdUYZEbJ.jpg",
     link: "#",
     description: "农业教育 拍摄剪辑"
   },
@@ -54,7 +54,7 @@ const projects = [
     title: "企宣剪辑（1）",
     category: "activity",
     bvid: "BV18PdDYBE6B",
-    cover: "/images/thumbnails/BV18PdDYBE6B.jpg",
+    cover: "images/thumbnails/BV18PdDYBE6B.jpg",
     link: "#",
     description: "纯剪辑"
   },
@@ -63,7 +63,7 @@ const projects = [
     title: "FB双光警戒枪型摄像机开箱",
     category: "feed",
     bvid: "BV1CidSYoEk3",
-    cover: "/images/thumbnails/BV1CidSYoEk3.jpg",
+    cover: "images/thumbnails/BV1CidSYoEk3.jpg",
     link: "#",
     description: "电子产品 纯剪辑"
   },
@@ -72,7 +72,7 @@ const projects = [
     title: "游戏特效",
     category: "feed",
     bvid: "BV1acdDY6Eev",
-    cover: "/images/thumbnails/BV1acdDY6Eev.jpg",
+    cover: "images/thumbnails/BV1acdDY6Eev.jpg",
     link: "#",
     description: "游戏宣发 纯剪辑"
   },
@@ -81,7 +81,7 @@ const projects = [
     title: "亿图图示",
     category: "software",
     bvid: "BV18KdDYTEPK",
-    cover: "/images/thumbnails/BV18KdDYTEPK.jpg",
+    cover: "images/thumbnails/BV18KdDYTEPK.jpg",
     link: "#",
     description: "纯剪辑"
   },
@@ -90,7 +90,7 @@ const projects = [
     title: "天天学农游学",
     category: "activity",
     bvid: "BV1DPdDYBEui",
-    cover: "/images/thumbnails/BV1DPdDYBEui.jpg",
+    cover: "images/thumbnails/BV1DPdDYBEui.jpg",
     link: "#",
     description: "拍摄剪辑"
   },
@@ -99,7 +99,7 @@ const projects = [
     title: "元气玛特",
     category: "feed",
     bvid: "BV1hcdDY6Ey7",
-    cover: "/images/thumbnails/BV1hcdDY6Ey7.jpg",
+    cover: "images/thumbnails/BV1hcdDY6Ey7.jpg",
     link: "#",
     description: "电商软件 拍摄剪辑"
   },
@@ -108,7 +108,7 @@ const projects = [
     title: "亿图图示",
     category: "software",
     bvid: "BV18KdDYTExo",
-    cover: "/images/thumbnails/BV18KdDYTExo.jpg",
+    cover: "images/thumbnails/BV18KdDYTExo.jpg",
     link: "#",
     description: "纯剪辑"
   },
@@ -117,7 +117,7 @@ const projects = [
     title: "SG武将",
     category: "feed",
     bvid: "BV1QcdDY6EhC",
-    cover: "/images/thumbnails/BV1QcdDY6EhC.jpg",
+    cover: "images/thumbnails/BV1QcdDY6EhC.jpg",
     link: "#",
     description: "游戏宣发 纯剪辑"
   },
@@ -126,7 +126,7 @@ const projects = [
     title: "企宣剪辑（2）",
     category: "activity",
     bvid: "BV18PdDYBE9D",
-    cover: "/images/thumbnails/BV18PdDYBE9D.jpg",
+    cover: "images/thumbnails/BV18PdDYBE9D.jpg",
     link: "#",
     description: "纯剪辑"
   },
@@ -135,7 +135,7 @@ const projects = [
     title: "天天学农",
     category: "feed",
     bvid: "BV14TdUYZEgy",
-    cover: "/images/thumbnails/BV14TdUYZEgy.jpg",
+    cover: "images/thumbnails/BV14TdUYZEgy.jpg",
     link: "#",
     description: "农业教育 纯剪辑"
   },
@@ -144,7 +144,7 @@ const projects = [
     title: "亿图图示",
     category: "software",
     bvid: "BV18KdDYTE5G",
-    cover: "/images/thumbnails/BV18KdDYTE5G.jpg",
+    cover: "images/thumbnails/BV18KdDYTE5G.jpg",
     link: "#",
     description: "纯剪辑"
   },
@@ -153,7 +153,7 @@ const projects = [
     title: "FB灭世录",
     category: "feed",
     bvid: "BV1acdDY6EGa",
-    cover: "/images/thumbnails/BV1acdDY6EGa.jpg",
+    cover: "images/thumbnails/BV1acdDY6EGa.jpg",
     link: "#",
     description: "游戏宣发 纯剪辑"
   }
