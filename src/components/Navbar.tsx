@@ -39,8 +39,8 @@ const Navbar = () => {
             </div>
           </div>
           <div className="text-center">
-            <h1 className="font-bold text-2xl">唐俊深</h1>
-            <p className="text-lg text-gray-600">短视频运营</p>
+            <h1 className="text-2xl font-bold text-gray-900">唐俊深</h1>
+            <p className="text-gray-600">视频剪辑</p>
           </div>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2.5 bg-green-50 px-5 py-2 rounded-full border border-green-100">

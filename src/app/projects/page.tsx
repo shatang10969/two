@@ -389,7 +389,7 @@ export default function ProjectsPage() {
                         >
                           <img
                             src={getImagePath(project.cover)}
-                            alt={project.title}
+                      alt={project.title}
                             className="w-full h-full object-cover"
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
@@ -403,7 +403,7 @@ export default function ProjectsPage() {
                               </svg>
                             </div>
                           </div>
-                        </div>
+                  </div>
                       )}
                       
                       {/* 移动端直接显示播放器，非移动端在hover时显示 */}
@@ -505,12 +505,12 @@ export default function ProjectsPage() {
                       </span>
                     ))}
                   </div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-        <Footer />
+              ))}
+            </div>
+          </section>
+          <Footer />
       </main>
     </div>
   );
