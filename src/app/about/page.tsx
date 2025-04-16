@@ -7,7 +7,7 @@ export default function AboutPage() {
     { 
       value: '30+', 
       label: '已完成项目与账号', 
-      description: '覆盖教育、游戏、电商等多个类型，助力账号涨粉，信息流消耗转化双增长',
+      description: '覆盖教育、游戏、电商等领域，助力账号涨粉，信息流消耗转化双增长',
       icon: (
         <svg className="w-8 h-8 text-purple-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -17,7 +17,7 @@ export default function AboutPage() {
     { 
       value: '5+', 
       label: '年剪辑与运营经验', 
-      description: '从脚本构思到拍摄、成片输出，独立完成全流程，熟练掌握PR、剪映等主流工具',
+      description: '从脚本到拍摄、成片输出，独立完成全流程，熟练掌握PR、剪映等工具',
       icon: (
         <svg className="w-8 h-8 text-purple-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -25,7 +25,7 @@ export default function AboutPage() {
       )
     },
     { 
-      value: '40+', 
+      value: '60+', 
       label: '月均剪辑成片数量', 
       description: '稳定高效输出内容，兼顾节奏与质量，适配多账号多风格剪辑需求',
       icon: (
@@ -115,11 +115,11 @@ export default function AboutPage() {
                         </svg>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center md:flex-col md:items-start gap-2 md:gap-1 mb-1">
+                        <div className="flex items-center md:flex-col md:items-start gap-2 md:gap-1 mb-2">
                           <h3 className="text-xl md:text-2xl font-bold text-purple-600 tracking-tight">{stat.value}</h3>
                           <p className="font-medium text-sm text-gray-800 md:mt-0">{stat.label}</p>
                         </div>
-                        <p className="text-gray-600 text-xs md:text-sm leading-relaxed line-clamp-3">{stat.description}</p>
+                        <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{stat.description}</p>
                       </div>
                     </div>
                   </div>

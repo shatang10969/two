@@ -97,7 +97,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center gap-1.5">
               <h1 className="font-bold text-base">唐俊深</h1>
-              <span className="text-sm text-gray-600">· 短视频运营</span>
+              <span className="text-sm text-gray-600">· 视频剪辑</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
